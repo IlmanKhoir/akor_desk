@@ -1,0 +1,49 @@
+(() => {
+  const themeId = "akor-desk-theme";
+  const allowedModules = new Set(["akor", "framework", "lending", "organization", "store manager", "accounting", "assets", "buying", "manufacturing", "projects", "quality", "selling", "stock", "subcontracting", "erpnext settings"]);
+  const isLauncher = () => window.location.pathname === "/desk" || window.location.pathname === "/desk/";
+  const syncTheme = () => {
+    let theme = document.getElementById(themeId);
+    if (isLauncher()) {
+      if (!theme) {
+        theme = document.createElement("link"); theme.id = themeId; theme.rel = "stylesheet";
+        theme.href = "/assets/akor/desk_theme/css/desk_theme.css?v=20261023_004";
+        document.head.appendChild(theme);
+      }
+    } else theme?.remove();
+  };
+  const moduleName = (icon) => (icon.dataset.id || icon.querySelector(".icon-title")?.textContent || "").trim().toLowerCase();
+  const limitModules = () => {
+    if (!isLauncher()) return;
+    document.querySelectorAll(".desktop-icon").forEach((icon) => icon.classList.toggle("akor-module-hidden", !allowedModules.has(moduleName(icon))));
+  };
+  const syncDock = () => {
+    if (!isLauncher()) return document.getElementById("akor-ios-dock-wrapper")?.remove();
+    if (document.getElementById("akor-ios-dock-wrapper")) return;
+    const items = [["Koperasi", "/koperasi", "K"], ["Lending", "/app/lending", "Rp"], ["Akuntansi", "/app/accounting", "A"], ["Store POS", "/app/store-manager", "POS"], ["Karyawan", "/app/karyawan", "HR"], ["Produk", "/app/item", "SKU"], ["Penjualan", "/app/selling", "Jual"], ["Stok", "/app/stock", "Stok"], ["Pembelian", "/app/buying", "Beli"], ["Proyek", "/app/projects", "Pro"], ["Aset", "/app/assets", "Aset"], ["Kualitas", "/app/quality", "QC"], ["Pengaturan", "/app/erpnext-settings", "Set"]];
+    const wrapper = document.createElement("div");
+    wrapper.id = "akor-ios-dock-wrapper";
+    wrapper.className = "akor-ios-dock-wrapper";
+    wrapper.innerHTML = `<div class="akor-ios-dock">${items.map(([title, route, icon]) => route ? `<a class="akor-dock-btn" href="${route}" title="Buka ${title}"><div class="akor-dock-icon-box">${icon}</div><span>${title}</span></a>` : `<button class="akor-dock-btn akor-dock-menu-trigger" type="button" aria-expanded="false"><div class="akor-dock-icon-box">${icon}</div><span>${title}</span></button>`).join("")}</div><div class="akor-dock-menu" hidden><a href="/app/accounting">Accounting</a></div>`;
+    document.body.appendChild(wrapper);
+    const trigger = wrapper.querySelector(".akor-dock-menu-trigger");
+    const menu = wrapper.querySelector(".akor-dock-menu");
+    trigger.addEventListener("click", () => {
+      const open = menu.hidden;
+      menu.hidden = !open;
+      trigger.setAttribute("aria-expanded", String(open));
+    });
+    document.addEventListener("click", (event) => {
+      if (!wrapper.contains(event.target)) { menu.hidden = true; trigger.setAttribute("aria-expanded", "false"); }
+    });
+  };
+
+  const sync = () => {
+    syncTheme();
+    syncDock();
+    limitModules();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", sync, { once: true }); else sync();
+  frappe.router?.on?.("change", () => setTimeout(sync, 0));
+  new MutationObserver(() => limitModules()).observe(document.documentElement, { childList: true, subtree: true });
+})();

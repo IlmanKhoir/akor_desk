@@ -1,0 +1,72 @@
+/* Primary Action Buttons */
+.btn-primary {
+  background-color: var(--akor-primary) !important;
+  border-color: var(--akor-primary) !important;
+  color: var(--akor-text-inverse) !important;
+  font-weight: 600 !important;
+  border-radius: var(--akor-radius-md) !important;
+  box-shadow: var(--akor-shadow-xs) !important;
+  transition: all 0.18s ease !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--akor-primary-hover) !important;
+  border-color: var(--akor-primary-hover) !important;
+  box-shadow: 0 4px 10px rgba(30, 58, 138, 0.25) !important;
+}
+
+/* Default / Secondary Buttons */
+.btn-default {
+  background-color: var(--akor-bg-surface) !important;
+  border: 1px solid var(--akor-border-medium) !important;
+  color: var(--akor-text-main) !important;
+  font-weight: 500 !important;
+  border-radius: var(--akor-radius-md) !important;
+  transition: all 0.15s ease !important;
+}
+
+.btn-default:hover {
+  background-color: var(--akor-bg-subtle) !important;
+  border-color: var(--akor-border-strong) !important;
+  color: var(--akor-text-main) !important;
+}
+
+/* Inputs & Form Controls */
+.form-control {
+  border: 1px solid var(--akor-border-medium) !important;
+  border-radius: var(--akor-radius-md) !important;
+  color: var(--akor-text-main) !important;
+  font-size: 13.5px !important;
+  transition: all 0.18s ease !important;
+}
+
+.form-control:focus {
+  border-color: var(--akor-primary) !important;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12) !important;
+}
+
+/* Dialogs & Modals */
+.modal-content {
+  border: 1px solid var(--akor-border-subtle) !important;
+  border-radius: var(--akor-radius-xl) !important;
+  box-shadow: var(--akor-shadow-lg) !important;
+  overflow: hidden !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--akor-border-subtle) !important;
+  background-color: var(--akor-bg-surface) !important;
+  padding: 16px 22px !important;
+}
+
+.modal-title {
+  font-weight: 700 !important;
+  color: var(--akor-text-main) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--akor-border-subtle) !important;
+  background-color: var(--akor-bg-subtle) !important;
+  padding: 12px 22px !important;
+}

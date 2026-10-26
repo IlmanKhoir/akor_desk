@@ -1,0 +1,55 @@
+.layout-side-section {
+  background-color: var(--akor-bg-surface) !important;
+  border-right: 1px solid var(--akor-border-subtle) !important;
+  padding: 16px 12px !important;
+}
+
+/* Sidebar Links */
+.desk-sidebar .standard-sidebar-item {
+  border-radius: var(--akor-radius-md) !important;
+  margin-bottom: 3px !important;
+  padding: 8px 12px !important;
+  color: var(--akor-text-muted) !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  transition: all 0.15s ease !important;
+}
+
+.desk-sidebar .standard-sidebar-item:hover {
+  background-color: var(--akor-bg-subtle) !important;
+  color: var(--akor-text-main) !important;
+}
+
+.desk-sidebar .standard-sidebar-item.selected {
+  background-color: var(--akor-primary-light) !important;
+  color: var(--akor-primary) !important;
+  font-weight: 600 !important;
+}
+
+.desk-sidebar .standard-sidebar-item.selected .sidebar-item-icon {
+  color: var(--akor-primary) !important;
+}
+
+/* Sidebar Section Headers */
+.desk-sidebar .standard-sidebar-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: var(--akor-text-subtle) !important;
+  padding: 12px 12px 6px 12px !important;
+}
+
+/* Sidebar Badge counts */
+.desk-sidebar .standard-sidebar-item .item-count {
+  background-color: var(--akor-bg-subtle) !important;
+  color: var(--akor-text-subtle) !important;
+  font-size: 11px !important;
+  padding: 2px 7px !important;
+  border-radius: 10px !important;
+}
+
+.desk-sidebar .standard-sidebar-item.selected .item-count {
+  background-color: var(--akor-primary) !important;
+  color: var(--akor-text-inverse) !important;
+}

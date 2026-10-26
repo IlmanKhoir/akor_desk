@@ -1,0 +1,63 @@
+/**
+ * AKOR Desktop Theme — Main Entrypoint CSS
+ * Combines all modular desktop CSS components (< 50 lines)
+ */
+
+@import url('./01_variables.css');
+@import url('./02_navbar.css');
+@import url('./03_sidebar.css');
+@import url('./04_cards.css');
+@import url('./05_controls.css');
+@import url('./06_desktop_icons.css');
+
+/* Awesome Bar: keep the search dialog readable when Desk is in dark mode. */
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .modal-content,
+[data-theme="dark"] .navbar-modal-wrapper,
+[data-theme="dark"] .navbar-modal-wrapper .modal-body {
+  background: #111827 !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .navbar-modal-wrapper #navbar-search,
+[data-theme="dark"] .navbar-modal-wrapper #navbar-search input,
+[data-theme="dark"] .navbar-modal-wrapper .form-control {
+  background: #0f172a !important;
+  border-color: #475569 !important;
+  color: #f8fafc !important;
+  caret-color: #f8fafc !important;
+}
+
+[data-theme="dark"] .navbar-modal-wrapper #navbar-search input::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1;
+}
+
+[data-theme="dark"] .navbar-modal-wrapper .awesomebar-search-icon,
+[data-theme="dark"] .navbar-modal-wrapper .awesomplete,
+[data-theme="dark"] .navbar-modal-wrapper .awesomplete li {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .navbar-modal-wrapper .awesomplete li:hover,
+[data-theme="dark"] .navbar-modal-wrapper .awesomplete li[aria-selected="true"] {
+  background: #1e293b !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .modal-footer,
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .cool-awesomebar-modal-footer {
+  background: #172033 !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .text-muted,
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .awesomebar-modal-footer {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .modal:has(.navbar-modal-wrapper) .help-item {
+  background: #334155 !important;
+  color: #ffffff !important;
+}

@@ -1,0 +1,579 @@
+/* ==========================================================================
+   AKOR Desktop Theme — Grid Modul Menyamping & Tampilan Formal Monokrom
+   ========================================================================== */
+
+/* Background Canvas: Formal Clean Monokrom (Hitam Putih) */
+body[data-route="desktop"],
+body[data-route="desk"],
+body[data-route*="desktop"],
+.desktop-wrapper {
+  background: #fbfbfd !important;
+  min-height: 100vh !important;
+  color: #111827 !important;
+  position: relative !important;
+  padding-bottom: 120px !important; /* Ruang untuk floating dock di bawah */
+}
+
+[data-theme="dark"] body[data-route="desktop"],
+[data-theme="dark"] body[data-route="desk"],
+[data-theme="dark"] body[data-route*="desktop"],
+[data-theme="dark"] .desktop-wrapper {
+  background: #090d16 !important;
+  color: #f8fafc !important;
+}
+
+/* Header Navbar: Formal Monokrom */
+.desktop-navbar.navbar,
+header.navbar {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+[data-theme="dark"] .desktop-navbar.navbar,
+[data-theme="dark"] header.navbar {
+  background: rgba(15, 23, 42, 0.85) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.desktop-navbar.navbar:hover,
+header.navbar:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="dark"] .desktop-navbar.navbar:hover,
+[data-theme="dark"] header.navbar:hover {
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Search bar on desktop */
+.desktop-navbar-modal-search {
+  background: #f3f4f6 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  color: #111827 !important;
+  transition: all 0.25s ease !important;
+}
+
+.desktop-navbar-modal-search:hover {
+  background: #ffffff !important;
+  border-color: #111827 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="dark"] .desktop-navbar-modal-search {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  color: #f9fafb !important;
+}
+
+[data-theme="dark"] .desktop-navbar-modal-search:hover {
+  background: #0f172a !important;
+  border-color: #f3f4f6 !important;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.1) !important;
+}
+
+.desktop-search-icon > svg {
+  stroke: #6b7280 !important;
+}
+
+/* ==========================================================================
+   Desktop Grid Container: Menyamping & Terpusat (Bukan 1 Kolom ke Bawah)
+   ========================================================================== */
+.desktop-container,
+#page-desktop .desktop-container,
+.case-desktop .desktop-container {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 30px 40px 120px 40px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+.desktop-container .icons-container,
+.icons-container,
+#page-desktop .icons-container {
+  width: 100% !important;
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   SUSUNAN ICON DESKTOP: MAKSIMAL 4 KOLOM HORIZONTAL
+   Prioritas tertinggi menimpa bawaan desktop.css Frappe
+   ========================================================================== */
+
+/* Hapus batasan lebar pada wrapper & page container */
+html, body, .main-section, .page-container, .desktop-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Container utama desktop Frappe */
+.desktop-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 40px 20px 100px 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Container pembungkus grid (.icons-container) */
+.desktop-container .icons-container,
+.icons-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 30px auto 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* GRID UTAMA ICON: MENYAMPING SECARA HORIZONTAL (Grid Responsif 5 - 6 Kolom) */
+.desktop-container .icons,
+.icons-container .icons,
+.icons {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)) !important;
+  grid-auto-flow: row !important;
+  justify-content: center !important;
+  justify-items: center !important;
+  align-content: start !important;
+  align-items: start !important;
+  gap: 28px 24px !important;
+  width: 100% !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  padding: 24px 16px !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 992px) {
+  .desktop-container .icons,
+  .icons-container .icons,
+  .icons {
+    grid-template-columns: repeat(6, 140px) !important;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .desktop-container .icons,
+  .icons-container .icons,
+  .icons {
+    grid-template-columns: repeat(4, 135px) !important;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .desktop-container .icons,
+  .icons-container .icons,
+  .icons {
+    grid-template-columns: repeat(3, 125px) !important;
+    gap: 20px 14px !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .desktop-container .icons,
+  .icons-container .icons,
+  .icons {
+    grid-template-columns: repeat(2, 120px) !important;
+    gap: 16px 12px !important;
+  }
+}
+
+/* Ukuran dan orientasi setiap kotak icon */
+.desktop-container .desktop-icon,
+.icons .desktop-icon,
+.desktop-icon {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 130px !important;
+  height: 126px !important;
+  margin: 0 !important;
+  padding: 10px !important;
+  box-sizing: border-box !important;
+  float: none !important;
+}
+
+/* Setiap Card Icon Modul */
+.desktop-icon {
+  width: 120px !important;
+  height: 125px !important;
+  border-radius: 20px !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  padding: 10px 6px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
+}
+
+/* Efek Card Hover */
+.desktop-icon:hover {
+  transform: translateY(-4px) !important;
+}
+
+.desktop-icon:active {
+  transform: translateY(-1px) !important;
+}
+
+.desktop-icon.akor-module-hidden {
+  display: none !important;
+}
+
+/* Keep the launcher limited to the approved module set without removing the
+   underlying workspaces from Frappe. */
+.desktop-icon[data-id="GCG Akor"],
+.desktop-icon[data-id="Akor POS"],
+.desktop-icon[data-id="Portal Anggota"] {
+  display: none !important;
+}
+
+/* Icon Container: Bentuk Kotak Membulat Gaya iOS Formal Monokrom */
+.desktop-icon .icon-container {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 17px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform-style: preserve-3d !important;
+  position: relative !important;
+}
+
+[data-theme="dark"] .desktop-icon .icon-container {
+  background: #182234 !important;
+  border: 1px solid #2d3b55 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Efek 3D Shadow Bertingkat saat Cursor Mengarah ke Icon */
+.desktop-icon:hover .icon-container,
+.desktop-icon:focus-visible .icon-container,
+.desktop-icon:active .icon-container {
+  transform: translateY(-3px) scale(1.08) !important;
+  border-color: #111827 !important;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 6px 12px rgba(0, 0, 0, 0.08),
+    0 12px 24px rgba(0, 0, 0, 0.12),
+    0 20px 36px rgba(0, 0, 0, 0.16) !important;
+}
+
+[data-theme="dark"] .desktop-icon:hover .icon-container,
+[data-theme="dark"] .desktop-icon:focus-visible .icon-container,
+[data-theme="dark"] .desktop-icon:active .icon-container {
+  border-color: #f1f5f9 !important;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 16px 28px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.42) !important;
+}
+
+/* Gambar / Logo di dalam icon */
+.desktop-icon .icon-container img,
+.desktop-icon .icon-container .app-icon {
+  width: 40px !important;
+  height: 40px !important;
+  object-fit: contain !important;
+  transition: transform 0.25s ease !important;
+}
+
+.desktop-icon:hover .icon-container img,
+.desktop-icon:hover .icon-container .app-icon {
+  transform: scale(1.04) !important;
+}
+
+/* Judul / Label Modul */
+.desktop-icon .icon-caption {
+  width: 100% !important;
+  max-width: 110px !important;
+  height: auto !important;
+  text-align: center !important;
+}
+
+.desktop-icon .icon-title {
+  color: #1e293b !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  text-align: center !important;
+  margin-top: 2px !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: color 0.2s ease, font-weight 0.2s ease !important;
+}
+
+.desktop-icon:hover .icon-title {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .desktop-icon .icon-title {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .desktop-icon:hover .icon-title {
+  color: #ffffff !important;
+}
+
+/* Sembunyikan subtitle agar rapi & padat */
+.desktop-icon .icon-subtitle {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Dock Rekomendasi Mengambang di Bawah Tengah (iOS Floating Dock)
+   ========================================================================== */
+.akor-ios-dock-wrapper {
+  position: fixed !important;
+  bottom: 24px !important;
+  left: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1040 !important;
+  pointer-events: none !important; /* Container tembus klik, dock yang aktif */
+}
+
+
+.akor-ios-dock-label {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  color: #64748b !important;
+  margin-bottom: 6px !important;
+  opacity: 0.8 !important;
+  pointer-events: auto !important;
+}
+
+[data-theme="dark"] .akor-ios-dock-label {
+  color: #94a3b8 !important;
+}
+
+.akor-ios-dock {
+  pointer-events: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 16px !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(24px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(200%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 28px !important;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.08),
+    0 20px 40px -10px rgba(0, 0, 0, 0.12),
+    0 0 1px 1px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover Shadow pada Dock (Hitam/Putih sesuai tema) */
+.akor-ios-dock:hover {
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 14px 32px -4px rgba(0, 0, 0, 0.16),
+    0 28px 56px -8px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="dark"] .akor-ios-dock {
+  background: rgba(10, 10, 10, 0.94) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.6),
+    0 20px 40px -10px rgba(0, 0, 0, 0.7),
+    0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .akor-ios-dock:hover {
+  box-shadow:
+    0 14px 32px -4px rgba(0, 0, 0, 0.8),
+    0 28px 56px -8px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Item di dalam dock */
+.akor-dock-btn {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 12px !important;
+  border-radius: 18px !important;
+  text-decoration: none !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+}
+
+button.akor-dock-btn {
+  font: inherit !important;
+}
+
+.akor-dock-menu {
+  position: absolute !important;
+  bottom: calc(100% + 10px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  min-width: 138px !important;
+  padding: 6px !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+.akor-dock-menu a {
+  display: block !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+  color: #111111 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.akor-dock-menu a:hover { background: #f3f4f6 !important; }
+
+[data-theme="dark"] .akor-dock-menu {
+  background: #111111 !important;
+  border-color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(255, 255, 255, 0.24) !important;
+}
+
+[data-theme="dark"] .akor-dock-menu a { color: #ffffff !important; }
+[data-theme="dark"] .akor-dock-menu a:hover { background: #262626 !important; }
+
+.akor-dock-icon-box {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #f1f5f9 !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Light-mode module colours: soft enough for the white launcher canvas. */
+.akor-dock-btn:nth-child(1) .akor-dock-icon-box { background: #e0f2fe !important; border-color: #bae6fd !important; color: #0369a1 !important; }
+.akor-dock-btn:nth-child(2) .akor-dock-icon-box { background: #dcfce7 !important; border-color: #bbf7d0 !important; color: #15803d !important; }
+.akor-dock-btn:nth-child(3) .akor-dock-icon-box { background: #fef3c7 !important; border-color: #fde68a !important; color: #b45309 !important; }
+.akor-dock-btn:nth-child(4) .akor-dock-icon-box { background: #ede9fe !important; border-color: #ddd6fe !important; color: #6d28d9 !important; }
+.akor-dock-btn:nth-child(5) .akor-dock-icon-box { background: #dbeafe !important; border-color: #bfdbfe !important; color: #1d4ed8 !important; }
+
+
+[data-theme="dark"] .akor-dock-icon-box {
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  color: #111111 !important;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2) !important;
+}
+
+
+.akor-dock-btn:hover .akor-dock-icon-box,
+.akor-dock-btn:focus-visible .akor-dock-icon-box,
+.akor-dock-btn:active .akor-dock-icon-box {
+  transform: translateY(-6px) scale(1.15) !important;
+  border-color: currentColor !important;
+  box-shadow:
+    0 4px 8px rgba(15, 23, 42, 0.1),
+    0 10px 20px rgba(15, 23, 42, 0.14) !important;
+}
+
+[data-theme="dark"] .akor-dock-btn:hover .akor-dock-icon-box,
+[data-theme="dark"] .akor-dock-btn:focus-visible .akor-dock-icon-box,
+[data-theme="dark"] .akor-dock-btn:active .akor-dock-icon-box {
+  border-color: #ffffff !important;
+  box-shadow:
+    0 4px 10px rgba(255, 255, 255, 0.22),
+    0 0 18px rgba(255, 255, 255, 0.5) !important;
+}
+
+.akor-dock-btn span {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #334155 !important;
+  margin-top: 4px !important;
+  transition: color 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.akor-dock-btn:hover span {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .akor-dock-btn span {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .akor-dock-btn:hover span {
+  color: #ffffff !important;
+}
+
+.akor-dock-divider {
+  width: 1px !important;
+  height: 32px !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  margin: 0 4px !important;
+}
+
+[data-theme="dark"] .akor-dock-divider {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+@media (max-width: 720px) {
+  .akor-ios-dock-wrapper { bottom: 12px !important; }
+  .akor-ios-dock {
+    max-width: calc(100vw - 24px) !important;
+    gap: 4px !important;
+    padding: 8px !important;
+    overflow-x: auto !important;
+  }
+  .akor-dock-btn { padding: 5px 7px !important; }
+  .akor-dock-divider { margin: 0 1px !important; }
+}

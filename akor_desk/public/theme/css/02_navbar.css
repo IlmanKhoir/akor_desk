@@ -1,0 +1,90 @@
+.navbar.navbar-default,
+header.navbar {
+  background-color: var(--akor-bg-surface) !important;
+  border-bottom: 1px solid var(--akor-border-subtle) !important;
+  box-shadow: var(--akor-shadow-xs) !important;
+  height: 56px !important;
+  padding: 0 20px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Hover Shadow pada Top Navbar (Hitam di light mode, Putih/Cahaya di dark mode) */
+.navbar.navbar-default:hover,
+header.navbar:hover {
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="dark"] .navbar.navbar-default:hover,
+[data-theme="dark"] header.navbar:hover {
+  box-shadow: 0 8px 24px -4px rgba(255, 255, 255, 0.08), 0 0 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Brand Logo area */
+.navbar-brand {
+  font-weight: 700 !important;
+  color: var(--akor-primary) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Awesomebar / Universal Search Input */
+.search-bar .awesomplete input,
+.navbar .search-bar input {
+  background-color: var(--akor-bg-subtle) !important;
+  border: 1px solid var(--akor-border-subtle) !important;
+  border-radius: var(--akor-radius-md) !important;
+  color: var(--akor-text-main) !important;
+  font-size: 13px !important;
+  padding: 7px 14px 7px 36px !important;
+  transition: all 0.2s ease !important;
+}
+
+.search-bar .awesomplete input:focus,
+.navbar .search-bar input:focus {
+  background-color: var(--akor-bg-surface) !important;
+  border-color: var(--akor-primary-hover) !important;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12) !important;
+  outline: none !important;
+}
+
+/* Search bar icon positioning */
+.search-bar .search-icon {
+  color: var(--akor-text-subtle) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Navbar Action Icons */
+.navbar-nav > li > a.nav-link {
+  color: var(--akor-text-muted) !important;
+  border-radius: var(--akor-radius-md) !important;
+  padding: 6px 10px !important;
+  transition: all 0.15s ease !important;
+}
+
+.navbar-nav > li > a.nav-link:hover {
+  background-color: var(--akor-bg-subtle) !important;
+  color: var(--akor-primary) !important;
+}
+
+/* Custom Quick Access Button in Desk Topbar */
+.akor-desk-portal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--akor-primary-light);
+  color: var(--akor-primary);
+  border: 1px solid var(--akor-primary-border);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--akor-radius-md);
+  margin-right: 12px;
+  text-decoration: none !important;
+  transition: all 0.18s ease;
+}
+
+.akor-desk-portal-badge:hover {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+  transform: translateY(-1px);
+}

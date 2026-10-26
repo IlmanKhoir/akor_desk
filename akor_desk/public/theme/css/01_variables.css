@@ -1,0 +1,56 @@
+:root {
+  /* Brand Primary Palettes */
+  --akor-primary: #1e3a8a;
+  --akor-primary-hover: #1e40af;
+  --akor-primary-active: #172554;
+  --akor-primary-light: #eff6ff;
+  --akor-primary-border: #bfdbfe;
+
+  /* Accent Colors */
+  --akor-accent: #0284c7;
+  --akor-success: #059669;
+  --akor-warning: #d97706;
+  --akor-danger: #dc2626;
+
+  /* Surfaces & Backgrounds */
+  --akor-bg-base: #f8fafc;
+  --akor-bg-surface: #ffffff;
+  --akor-bg-subtle: #f1f5f9;
+  --akor-bg-muted: #e2e8f0;
+
+  /* Borders & Dividers */
+  --akor-border-subtle: #e2e8f0;
+  --akor-border-medium: #cbd5e1;
+  --akor-border-strong: #94a3b8;
+
+  /* Typography Colors */
+  --akor-text-main: #0f172a;
+  --akor-text-muted: #475569;
+  --akor-text-subtle: #64748b;
+  --akor-text-inverse: #ffffff;
+
+  /* Radius Tokens */
+  --akor-radius-sm: 6px;
+  --akor-radius-md: 8px;
+  --akor-radius-lg: 12px;
+  --akor-radius-xl: 16px;
+
+  /* Modern Shadows */
+  --akor-shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --akor-shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
+  --akor-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --akor-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+
+  /* Fonts */
+  --akor-font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --akor-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Global Typography Clean-up */
+body[data-route*="app"] {
+  font-family: var(--akor-font-sans) !important;
+  background-color: var(--akor-bg-base) !important;
+  color: var(--akor-text-main) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

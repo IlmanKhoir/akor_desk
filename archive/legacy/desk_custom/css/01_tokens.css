@@ -1,0 +1,46 @@
+:root {
+  --os-bg-primary: #ffffff;
+  --os-bg-secondary: #f9fafb;
+  --os-bg-card: #ffffff;
+  --os-bg-card-hover: #ffffff;
+  
+  --os-border-subtle: #e5e7eb;
+  --os-border-highlight: #111827;
+
+  --os-text-primary: #111827;
+  --os-text-secondary: #4b5563;
+  --os-text-muted: #6b7280;
+
+  --os-accent-blue: #111827;
+  --os-accent-cyan: #374151;
+  --os-accent-emerald: #1f2937;
+  --os-accent-amber: #4b5563;
+  --os-accent-purple: #111827;
+  --os-accent-rose: #374151;
+
+  --os-radius-sm: 8px;
+  --os-radius-md: 14px;
+  --os-radius-lg: 20px;
+  --os-radius-full: 9999px;
+
+  --os-shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --os-shadow-elevated: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  
+  --os-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.akor-os-body {
+  font-family: var(--os-font-family);
+  background-color: var(--os-bg-primary);
+  color: var(--os-text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 50% 0%, #f3f4f6 0%, transparent 60%);
+}

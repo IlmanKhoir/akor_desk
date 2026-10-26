@@ -1,0 +1,67 @@
+/* Workspace Page Head */
+.page-head {
+  background-color: var(--akor-bg-surface) !important;
+  border-bottom: 1px solid var(--akor-border-subtle) !important;
+  padding: 16px 24px !important;
+  margin-bottom: 20px !important;
+}
+
+.page-title .title-text {
+  font-weight: 700 !important;
+  color: var(--akor-text-main) !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Workspace Blocks & Cards */
+.workspace-card,
+.desk-card,
+.frappe-card,
+.widget {
+  background-color: var(--akor-bg-surface) !important;
+  border: 1px solid var(--akor-border-subtle) !important;
+  border-radius: var(--akor-radius-lg) !important;
+  box-shadow: var(--akor-shadow-xs) !important;
+  transition: all 0.2s ease !important;
+}
+
+.workspace-card:hover,
+.widget:hover {
+  border-color: var(--akor-border-medium) !important;
+  box-shadow: var(--akor-shadow-md) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Quick List and Links inside Workspaces */
+.widget .widget-title {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  color: var(--akor-text-main) !important;
+}
+
+.shortcut-widget-box {
+  background-color: var(--akor-bg-surface) !important;
+  border: 1px solid var(--akor-border-subtle) !important;
+  border-radius: var(--akor-radius-md) !important;
+  padding: 12px 14px !important;
+  transition: all 0.18s ease !important;
+}
+
+.shortcut-widget-box:hover {
+  background-color: var(--akor-bg-subtle) !important;
+  border-color: var(--akor-primary-border) !important;
+  color: var(--akor-primary) !important;
+}
+
+/* Form and List Layouts */
+.frappe-list .list-row-container {
+  border-bottom: 1px solid var(--akor-border-subtle) !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.frappe-list .list-row-container:hover {
+  background-color: var(--akor-bg-subtle) !important;
+}
+
+.frappe-list .list-row {
+  padding: 10px 14px !important;
+}

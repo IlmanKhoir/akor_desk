@@ -1,0 +1,110 @@
+html.akor-launcher-loading,
+html.akor-launcher-loading body {
+  background: #f8fafc !important;
+}
+
+html.akor-launcher-loading body > *:not(.modal-backdrop) {
+  visibility: hidden;
+}
+
+html.akor-launcher-loading body::before {
+  content: "";
+  position: fixed;
+  z-index: 2147483646;
+  top: 50%;
+  left: 50%;
+  width: 42px;
+  height: 42px;
+  margin: -30px 0 0 -21px;
+  border: 3px solid rgba(37, 99, 235, .18);
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: akor-launcher-spin .72s linear infinite;
+}
+
+html.akor-launcher-loading body::after {
+  content: "Menyiapkan AKOR";
+  position: fixed;
+  z-index: 2147483646;
+  top: calc(50% + 23px);
+  left: 0;
+  width: 100%;
+  color: #64748b;
+  font: 500 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: .01em;
+  text-align: center;
+}
+
+html[data-theme="dark"].akor-launcher-loading,
+html[data-theme="dark"].akor-launcher-loading body {
+  background: #090d16 !important;
+}
+
+html[data-theme="dark"].akor-launcher-loading body::after { color: #a8b3c7; }
+
+@keyframes akor-launcher-spin { to { transform: rotate(360deg); } }
+
+body[data-route="desktop"],
+body[data-route="desk"],
+body[data-route*="desktop"] {
+  background: #fbfbfd !important;
+}
+
+body[data-route="desktop"] .desktop-wrapper,
+body[data-route="desk"] .desktop-wrapper,
+body[data-route*="desktop"] .desktop-wrapper {
+  min-height: 100vh;
+  background: #fbfbfd !important;
+  padding-bottom: 120px;
+}
+
+body[data-route="desktop"] .desktop-container,
+body[data-route="desk"] .desktop-container,
+body[data-route*="desktop"] .desktop-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 20px 100px;
+}
+
+body[data-route="desktop"] .desktop-container .icons,
+body[data-route="desk"] .desktop-container .icons,
+body[data-route*="desktop"] .desktop-container .icons {
+  display: grid;
+  grid-template-columns: repeat(6, 140px);
+  justify-content: center;
+  justify-items: center;
+  gap: 28px 24px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body[data-route="desktop"] .desktop-icon,
+body[data-route="desk"] .desktop-icon,
+body[data-route*="desktop"] .desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 125px;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  body[data-route="desktop"] .desktop-container .icons,
+  body[data-route="desk"] .desktop-container .icons,
+  body[data-route*="desktop"] .desktop-container .icons { grid-template-columns: repeat(4, 135px); }
+}
+
+@media (max-width: 767px) {
+  body[data-route="desktop"] .desktop-container .icons,
+  body[data-route="desk"] .desktop-container .icons,
+  body[data-route*="desktop"] .desktop-container .icons { grid-template-columns: repeat(3, 120px); }
+}
+
+[data-theme="dark"] body[data-route="desktop"],
+[data-theme="dark"] body[data-route="desk"],
+[data-theme="dark"] body[data-route*="desktop"] { background: #090d16 !important; }
+
+[data-theme="dark"] body[data-route="desktop"] .desktop-wrapper,
+[data-theme="dark"] body[data-route="desk"] .desktop-wrapper,
+[data-theme="dark"] body[data-route*="desktop"] .desktop-wrapper { background: #090d16 !important; }
